@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Andre Fransiscus Masalle — Data Science & AI</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,600&family=IBM+Plex+Sans:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#eef3f2;--ink:#14222b;--mute:#566872;--line:#c9d6d4;--card:#f8fbfa;--acc:#2b4bff;--pt:#e08a00;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0f1a20;--ink:#e6efee;--mute:#93a7ae;--line:#26373f;--card:#15242c;--acc:#7f93ff;--pt:#ffb23f}}
+:root[data-theme="dark"]{--bg:#0f1a20;--ink:#e6efee;--mute:#93a7ae;--line:#26373f;--card:#15242c;--acc:#7f93ff;--pt:#ffb23f}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.6 "IBM Plex Sans",system-ui,sans-serif}
+a{color:var(--acc)}
+:focus-visible{outline:2px solid var(--acc);outline-offset:3px}
+.wrap{max-width:960px;margin:0 auto;padding:0 24px}
+nav{display:flex;justify-content:space-between;gap:16px;padding:22px 0;font-size:15px}
+nav a{color:var(--ink);text-decoration:none;margin-left:20px}
+nav a:hover{color:var(--acc)}
+nav b{font-weight:500}
+h1,h2,h3{font-family:Newsreader,Georgia,serif;font-weight:600;line-height:1.1;margin:0}
+h1{font-size:clamp(38px,6.4vw,62px);letter-spacing:-.02em;max-width:15ch}
+h2{font-size:32px;margin-bottom:28px}
+h3{font-size:22px}
+.hero{display:grid;grid-template-columns:1.1fr 1fr;gap:40px;align-items:center;padding:48px 0 72px}
+.hero p{color:var(--mute);max-width:46ch;margin:20px 0 28px}
+.btn{display:inline-block;padding:11px 20px;border-radius:6px;background:var(--acc);color:var(--bg);text-decoration:none;font-weight:500;margin:0 10px 8px 0}
+.btn.o{background:none;color:var(--ink);border:1px solid var(--line)}
+.plot{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:14px}
+.plot svg{width:100%;height:auto;display:block;cursor:crosshair;touch-action:manipulation}
+.plot small{display:block;color:var(--mute);font-size:14px;margin-top:6px}
+section{padding:56px 0;border-top:1px solid var(--line)}
+.proj{display:grid;grid-template-columns:150px 1fr;gap:8px 32px;padding:24px 0;border-bottom:1px solid var(--line)}
+.proj:last-of-type{border:0}
+.metric{font-family:Newsreader,serif;font-size:36px;font-weight:600;color:var(--acc);line-height:1}
+.metric span{display:block;font:400 14px "IBM Plex Sans",sans-serif;color:var(--mute);margin-top:6px}
+.proj p{margin:8px 0 10px;color:var(--mute);max-width:64ch}
+.tags{display:flex;flex-wrap:wrap;gap:6px;padding:0;margin:0 0 8px;list-style:none}
+.tags li{font-size:14px;border:1px solid var(--line);border-radius:4px;padding:1px 9px}
+.pub{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:22px 24px}
+.pub p{margin:8px 0 0;color:var(--mute)}
+.row{display:grid;grid-template-columns:150px 1fr;gap:4px 32px;padding:14px 0;border-bottom:1px solid var(--line)}
+.row:last-child{border:0}
+.row .d{color:var(--mute);font-size:15px}
+.row b{font-weight:500}
+.row span.s{display:block;color:var(--mute);font-size:15px}
+.skills{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:28px}
+.skills h3{font-size:20px;margin-bottom:8px}
+.skills p{margin:0;color:var(--mute)}
+footer{padding:40px 0 56px;border-top:1px solid var(--line);color:var(--mute)}
+@media(max-width:760px){.hero{grid-template-columns:1fr}.proj,.row{grid-template-columns:1fr}nav a:not(:last-child){display:none}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<nav><b>Andre Fransiscus Masalle</b><span><a href="#projects">Projects</a><a href="#paper">Publication</a><a href="#experience">Experience</a><a href="#contact">Contact</a></span></nav>
+
+<header class="hero">
+<div>
+<h1>Machine learning for text, images, and tables.</h1>
+<p>Final-year Informatics student at Telkom University and first-author of an IEEE ICoAILO 2025 paper. I build NLP, computer vision, and data pipelines, and I teach AI/ML to 50+ students. Looking for an entry-level AI Engineer or Data Scientist role.</p>
+<a class="btn" href="#projects">See projects</a><a class="btn o" href="https://github.com/AndreMasalle">GitHub</a>
+</div>
+<div class="plot">
+<svg id="plot" viewBox="0 0 400 300" role="img" aria-label="Interactive scatter plot with a linear regression line"></svg>
+<small>Click the plot to add a point. The regression line refits instantly.</small>
+</div>
+</header>
+
+<section id="projects">
+<h2>Projects</h2>
+
+<article class="proj"><div class="metric">96%<span>macro F1</span></div><div>
+<h3>Multiclass Waste Image Classification</h3>
+<p>BDC 2026 preliminary round. Ensemble of CNN architectures, with a modular pipeline for corrupt, duplicate, and blurry image cleaning, background removal, EDA (t-SNE, Grad-CAM), and training of ResNet50, EfficientNet-B3, ConvNeXt-Tiny, and Swin-T.</p>
+<ul class="tags"><li>PyTorch</li><li>CNN ensemble</li><li>Grad-CAM</li></ul><a href="https://github.com/AndreMasalle/Penyisihan_BDC_2026">Code on GitHub</a></div></article>
+
+<article class="proj"><div class="metric">&lt;300 ms<span>response time</span></div><div>
+<h3>Similarity Detection for Final Project Proposals</h3>
+<p>Semantic search that flags duplicate student proposals, using Sentence-BERT embeddings and FAISS indexing. Integrated into an existing Flask and Laravel platform and published at IEEE ICoAILO 2025.</p>
+<ul class="tags"><li>SBERT</li><li>FAISS</li><li>Flask</li></ul><a href="https://github.com/AndreMasalle/Data-Science-Competition-ITB-2024">Code on GitHub</a></div></article>
+
+<article class="proj"><div class="metric">8<span>classes</span></div><div>
+<h3>MBG Tweet Aspect Classification</h3>
+<p>Fine-tuned IndoBERTweet on Indonesian tweets about the Makan Bergizi Gratis policy. Handled class imbalance with Focal Loss and golden N-gram augmentation, validated with 5-fold cross-validation. Selected for the university BDC 2026 delegation.</p>
+<ul class="tags"><li>IndoBERTweet</li><li>Focal Loss</li><li>NLP</li></ul><a href="https://github.com/AndreMasalle/BDC_2026">Code on GitHub</a></div></article>
+
+<article class="proj"><div class="metric">7,000+<span>books</span></div><div>
+<h3>Book Recommendation System</h3>
+<p>LLM-based semantic search with LangChain, OpenAI embeddings, and ChromaDB. Zero-shot genre classification (BART) and emotion analysis (RoBERTa) power filtering, served through a Gradio dashboard.</p>
+<ul class="tags"><li>LangChain</li><li>ChromaDB</li><li>Gradio</li></ul><a href="https://github.com/AndreMasalle/Data-Science-Competition-ITB-2024">Code on GitHub</a></div></article>
+
+<article class="proj"><div class="metric">0.94<span>ROC AUC</span></div><div>
+<h3>Employee Cholesterol Level Prediction</h3>
+<p>DSC ITB preliminary round. XGBoost with SMOTE and RandomizedSearchCV on a 1,336-row health dataset, after outlier removal and EDA across 15 variables.</p>
+<ul class="tags"><li>XGBoost</li><li>SMOTE</li><li>scikit-learn</li></ul><a href="https://github.com/AndreMasalle/Data-Science-Competition-ITB-2024">Code on GitHub</a></div></article>
+
+<article class="proj"><div class="metric">3.4×<span>higher risk</span></div><div>
+<h3>Monkeypox Risk Factor Analysis</h3>
+<p>Binary logistic regression on 381 respondents and 9 symptoms. Chi-square tests and odds ratios showed patients with swollen lymph nodes had 3.4 times the risk of those with muscle aches. Reached the semifinal of NSC Universitas Brawijaya 2023.</p>
+<ul class="tags"><li>Minitab</li><li>Logistic regression</li><li>Statistics</li></ul><a href="https://github.com/AndreMasalle/National-Statistic-Challenge-UB-2023">Code on GitHub</a></div></article>
+
+<article class="proj"><div class="metric">3<span>encoders</span></div><div>
+<h3>Automobile Data Preprocessing Pipeline</h3>
+<p>Reproducible scikit-learn pipeline with ColumnTransformer and custom transformers: one-hot, ordinal, and frequency encoding, median/mode imputation, and MinMax scaling.</p>
+<ul class="tags"><li>Pipeline</li><li>ColumnTransformer</li><li>pandas</li></ul><a href="https://github.com/AndreMasalle/Mobile">Code on GitHub</a></div></article>
+</section>
+
+<section id="paper">
+<h2>Publication</h2>
+<div class="pub">
+<h3>Efficient Semantic Search for Detecting Redundant Student Project Proposals</h3>
+<p>First author and presenter. 2025 IEEE International Conference on Artificial Intelligence for Learning and Optimization (ICoAILO), Application &amp; Services Track, August 2025.</p>
+<p><a href="https://doi.org/10.1109/ICoAILO66760.2025.11155951">Read the paper (DOI)</a></p>
+</div>
+</section>
+
+<section id="experience">
+<h2>Experience</h2>
+<div class="row"><div class="d">Feb – Jul 2025</div><div><b>Research Assistant, Telkom University</b><span class="s">Built machine learning systems with Python and FastAPI, and automated repetitive research tasks.</span></div></div>
+<div class="row"><div class="d">Sep 2024 – Jul 2025</div><div><b>Applied AI Lecturer Assistant, Telkom University</b><span class="s">Led coding practicums on ML workflows for 50+ students: preprocessing, training, evaluation, supervised and unsupervised learning.</span></div></div>
+<div class="row"><div class="d">Sep – Dec 2024</div><div><b>Database System II Practical Assistant</b><span class="s">Taught data warehousing, NoSQL, MongoDB (CRUD, aggregation, schema design), and advanced SQL.</span></div></div>
+<div class="row"><div class="d">Nov 2024</div><div><b>Lecturer Assistant, Mobility Program (i-Cats University × Telkom University)</b><span class="s">Wrote no-code ML teaching modules in BigML and guided student projects in BigML and Python.</span></div></div>
+<div class="row"><div class="d">2023 – 2024</div><div><b>Practical Assistant, Database System I and Data Structure</b><span class="s">Mentored students in SQL, database design, and data structures in Java.</span></div></div>
+</section>
+
+<section id="skills">
+<h2>Skills and certifications</h2>
+<div class="skills">
+<div><h3>Languages</h3><p>Python, SQL</p></div>
+<div><h3>Machine learning and AI</h3><p>scikit-learn, XGBoost, Sentence-BERT, HuggingFace, LangChain, OpenAI Embeddings, FAISS, ChromaDB</p></div>
+<div><h3>Data analysis</h3><p>pandas, NumPy, Matplotlib, Seaborn, Minitab</p></div>
+<div><h3>Data engineering and deployment</h3><p>scikit-learn Pipelines, SMOTE, LocalOutlierFactor, Flask, Gradio, Git</p></div>
+<div><h3>Certifications</h3><p>Data Streaming Engineer Foundation (Sep 2026), Azure AI Fundamentals (Mar 2026), AI Ethics, AI Class ASEAN (Mar 2026)</p></div>
+<div><h3>Education</h3><p>B.Sc. Informatics, Telkom University (2025–present). D3 Software Application Engineering, Telkom University (2022–2025)</p></div>
+</div>
+</section>
+
+<section id="contact">
+<h2>Contact</h2>
+<p>Open to entry-level AI Engineer and Data Scientist roles. Find my code on <a href="https://github.com/AndreMasalle">GitHub</a> or read my <a href="https://doi.org/10.1109/ICoAILO66760.2025.11155951">IEEE paper</a>.</p>
+</section>
+<footer>© 2026 Andre Fransiscus Masalle</footer>
+</div>
+
+<script>
+(function(){
+var svg=document.getElementById('plot'),W=400,H=300,P=28,pts=[];
+var seed=7;function r(){seed=(seed*9301+49297)%233280;return seed/233280}
+for(var i=0;i<22;i++){var x=.06+.88*r();pts.push([x,Math.min(.97,Math.max(.03,.15+.7*x+(r()-.5)*.28))])}
+function X(v){return P+v*(W-2*P)}function Y(v){return H-P-v*(H-2*P)}
+function draw(){
+var n=pts.length,sx=0,sy=0,sxy=0,sxx=0;
+pts.forEach(function(p){sx+=p[0];sy+=p[1];sxy+=p[0]*p[1];sxx+=p[0]*p[0]});
+var d=n*sxx-sx*sx,m=d?(n*sxy-sx*sy)/d:0,b=(sy-m*sx)/n;
+var s='<line x1="'+P+'" y1="'+(H-P)+'" x2="'+(W-P)+'" y2="'+(H-P)+'" stroke="var(--line)" stroke-width="1.5"/><line x1="'+P+'" y1="'+P+'" x2="'+P+'" y2="'+(H-P)+'" stroke="var(--line)" stroke-width="1.5"/>';
+s+='<line x1="'+X(0)+'" y1="'+Y(b)+'" x2="'+X(1)+'" y2="'+Y(m+b)+'" stroke="var(--acc)" stroke-width="2.5"/>';
+pts.forEach(function(p){s+='<circle cx="'+X(p[0]).toFixed(1)+'" cy="'+Y(p[1]).toFixed(1)+'" r="4.5" fill="var(--pt)"/>'});
+s+='<text x="'+(W-P)+'" y="'+(P-8)+'" text-anchor="end" font-size="12" fill="var(--mute)" font-family="IBM Plex Sans,sans-serif">y = '+m.toFixed(2)+'x + '+b.toFixed(2)+'  ·  n = '+n+'</text>';
+svg.innerHTML=s}
+svg.addEventListener('click',function(e){
+var rc=svg.getBoundingClientRect(),px=(e.clientX-rc.left)/rc.width*W,py=(e.clientY-rc.top)/rc.height*H;
+var vx=(px-P)/(W-2*P),vy=(H-P-py)/(H-2*P);
+if(vx<0||vx>1||vy<0||vy>1)return;pts.push([vx,vy]);draw()});
+draw()})();
+</script>
+</body>
+</html>
